@@ -21,7 +21,7 @@ Clone into your `ComfyUI/custom_nodes` folder:
 
 ```bash
 cd ComfyUI/custom_nodes
-git clone https://github.com/YOUR_USERNAME/comfyui_toriigate.git
+git clone https://github.com/litch230/comfyui_toriigate.git
 ```
 
 Install requirements into the same Python environment that runs ComfyUI:
