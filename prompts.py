@@ -162,10 +162,14 @@ def make_user_query(item, c_type, use_names, add_tags, add_characters, add_char_
     if add_tags:
         user_request += f"# Booru tags for the image\n[{tags_string}]\n\n"
     
+    chars_tags = item.get('characters',[])
+    
+    if not chars_tags:
+        use_names = False
+
     if use_names:
-        has_character_grounding = add_characters or add_char_tags or add_description
+        has_character_grounding = bool(chars_tags) or add_characters or add_char_tags or add_description
         if has_character_grounding:
-            chars_tags = item.get('characters',[])
             if underscores_replace:
                 chars_tags = [a.replace('_', ' ') for a in chars_tags]
                 chars_string = ', '.join(chars_tags)
